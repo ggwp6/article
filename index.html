@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Subnetting</title>
+
+    <style>
+      p {
+        margin: 0;
+      }
+      .container-cstm {
+        max-width: 768px;
+        width: 100%;
+        margin-left: 15%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid d-flex gap-5 justify-content-between">
+      <main class="container-cstm me-5">
+        <h1>Subnetting</h1>
+
+        <!-- 1 -->
+        <article class="mb-4">
+          <div>
+            Subnets are logical divisions of an existing network that are
+            defined by both class of IP address and the subnet mask. Often,
+            consultants provide network design services to budding businesses to
+            help establish a network that fits their needs at the time. But as
+            the business grows or its needs change there may come a time when
+            the initial network structure no longer works.
+          </div>
+
+          <p>
+            N1 By default, Cisco IOS switch ports are put in one of the two DTP
+            modes. Which two?
+          </p>
+          <div>
+            <b>Dynamic desirable</b>
+            |
+            <b>Dynamic auto</b>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="mb-4">
+          <div>
+            Im currently working on a project that fits that description to a
+            tee. The network was conceived by consultants when there were not as
+            many devices and users to accommodate. As the needs of the business
+            grew, it became painfully obvious that a single /24 subnet that
+            accommodates up to 254 hosts wasnt enough anymore. So Im building
+            out a new network structure that can accommodate all of the devices
+            we currently have, separated by types of devices, and with room for
+            growth
+          </div>
+
+          <p>N2 Which of the following statements are true? (Choose two.)</p>
+          <div>
+            <b
+              >Stratum 1 devices have directly attached radio or atomic
+              clock.</b
+            >
+            |
+            <b
+              >The stratum number represents the distance from a reference
+              clock.</b
+            >
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="mb-4">
+          <div>
+            This means a separate subnet and corresponding VLAN for each group
+            of devices such as printers, servers, workstations, APs, etc. This
+            allows for each group to have as much room as we could possibly need
+            going forward while still keeping the network logically organized.
+          </div>
+
+          <p>
+            N3 With MAC flooding attacks, what are the two possible malicious
+            outcomes?
+          </p>
+          <div>
+            <b>
+              Switch resource overflows, such as the MAC address table, which
+              may result in traffic loss.
+            </b>
+            |
+            <b>
+              The switch flooding traffic, which may result in an intruding
+              device intercepting traffic.
+            </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://media.geeksforgeeks.org/wp-content/uploads/20230714184807/Subnet-Cheat-Sheet.png"
+          alt=""
+        />
+
+        <!-- 4 -->
+        <article class="mb-4">
+          <div>
+            As funny as it may seem, many seasoned IT professionals are still a
+            bit intimidated by subnetting simply because they don't want to
+            bother with the work it takes to implement it. How many addresses do
+            we need? What IP scheme are we going to use? How many addresses will
+            be given with DHCP and how many assigned statically? Will we
+            separate out the types of devices or simply place them in a certain
+            section of the range (such as putting all servers in the first 50
+            addresses of a range)?
+          </div>
+
+          <p>N4 There are two types of secondary private VLANs. Which two?</p>
+          <div>
+            <b> Isolated </b>
+            |
+            <b> Community </b>
+          </div>
+        </article>
+
+        <h2>How to subnet</h2>
+
+        <!-- 5 -->
+        <article class="mb-4">
+          <div>
+            As a result, once a network is made, usually it doesnt get recreated
+            or changed drastically. But theres no other choice with our network,
+            and because I am a glutton for punishment, I decided to take on this
+            task myself and not go the consultant route. To do that, I had to
+            blow the dust off the subnetting knowledge that I havent had to use
+            in some time and reacquaint myself with the calculation of hosts.
+            Here are the basics of subnetting as I understand them plus a few
+            things to consider sprinkled in at the end.
+          </div>
+
+          <p>N5 Which of the following statements are true? (Choose two.)</p>
+          <div>
+            <b>
+              TACACS differs from RADIUS in that it splits all three AAA
+              functions separately.
+            </b>
+            |
+            <b>
+              TACACS encrypts the entire packet and supports bidirectional
+              challenge responses.
+            </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://assets.gcore.pro/blog/what-is-a-subnet-how-subnetting-works/what-is-a-subnet-how-subnetting-works-2.png"
+          alt=""
+        />
+
+        <!-- 6 -->
+        <article class="mb-4">
+          <div>
+            When subnetting you are using a subnet mask to steal bits from the
+            host portion of an address and adding them to the network portion to
+            tailor the number of hosts you can accommodate. A subnet mask is a
+            32-bit number like an IP address, but instead of being used for host
+            addressing, its purpose is to communicate the portions of a network
+            address that are network/subnet bits and the portions that are host
+            bits. Subnet masks are constructed by setting all of the host bits
+            to 0 and all of the network/subnet bits to 1.
+          </div>
+
+          <p>
+            N6 Which of the following statements are generally true about
+            firewalls, routers, and switches? (Choose two.)
+          </p>
+          <div>
+            <b>
+              Firewalls come preconfigured to deny all traffic, and specific
+              traffic must be permitted.
+            </b>
+            |
+            <b>
+              Routers and switches come preconfigured to allow all traffic, and
+              specific traffic must be denied.
+            </b>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="mb-4">
+          <div>
+            Once you have decided how many host addresses you need, add up the
+            binary bits from both the network portion and the subnet portion for
+            each octet separately, and you will have your subnet mask.
+          </div>
+
+          <p>
+            N7 Which two statements are true about the IEEE 802.3at standard?
+          </p>
+          <div>
+            <b>
+              It can provide your powered devices with more than 15 W of power.
+            </b>
+            |
+            <b> It is an improvement over the 802.3af standard. </b>
+          </div>
+        </article>
+
+        <h2>What is a point-to-point subnet?</h2>
+
+        <!-- 8 -->
+        <article class="mb-4">
+          <div>
+            Because there are 32 total bits in an IPv4 address (eight in each of
+            four octets), to find the number of host addresses accommodated by a
+            particular mask you subtract the number of network bits and subnet
+            bits from 32 and raise 2 to the power of the difference. For
+            example, for a /22 network the number of host addresses would be 32
+            - 22 = 10, 210 = 1024 addresses. This chart shows the number of host
+            addresses associated with different masks:
+          </div>
+
+          <p>
+            N8 Which of the following SNMP statements are true? (Choose two.)
+            0.5!!!!!
+          </p>
+          <div>
+            <b>
+              Given SNMP write access, a device can be remotely reconfigured via
+              SNMP.
+            </b>
+            |
+            <b>
+              SNMP traps are sent from the SNMP agent to the SNMP manager and
+              are event based.
+            </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://cdn.networklessons.com/wp-content/uploads/2017/01/network-subnetting-example-class-c.png"
+          alt=""
+        />
+
+        <!-- 9 -->
+        <article class="mb-4">
+          <div>
+            When subnetting a network it is easy to think that because you have
+            x devices on your network you just need to pick an IP range and
+            subnet that has enough addresses to account for all devices, but
+            that would be leaving out some key considerations. By creating a
+            mega subnet, like say a /8 with 16,777,216 addresses, you begin to
+            run into network congestion issues. Because each subnet is its own
+            broadcast domain, whenever a switch sends an ARP broadcast or a
+            machine is broadcasting something else, every device in the
+            broadcast domain will get it. As a result, broadcast packets on your
+            network can drown out actual non-broadcast traffic.
+          </div>
+
+          <p>N9 Which of the following SNMP recommendations is not valid?</p>
+          <div>
+            <b>
+              Always use MD5 authentication when SNMPv3 is not available and you
+              are forced to use SNMPv2c.
+            </b>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="mb-4">
+          <div>
+            Broadcast traffic can be manageable when you are talking about
+            256-1024 or fewer addresses, but any bigger, and you are in serious
+            trouble depending on how noisy your devices are. Best practice is
+            usually to separate some of the main categories of devices on your
+            network into their own subnets or broadcast domains with VLANs. By
+            doing this with some kind of Layer 3 device to route traffic between
+            subnets you can still have as many addresses as you need, but the
+            network noise is manageable.
+          </div>
+
+          <p>N10 Which HSRP group uses the MAC address 0000.0c07.ac01?</p>
+          <div>
+            <b> Group 1 </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://assets.gcore.pro/blog/what-is-a-subnet-how-subnetting-works/what-is-a-subnet-how-subnetting-works-3.png"
+          alt=""
+        />
+
+        <!-- 11 -->
+        <article class="mb-4">
+          <div>
+            Implementing a new subnet scheme will vary greatly depending on your
+            environment, but its best to go gradually. Grab the low-hanging
+            fruit first to test the concept, get the routes working properly,
+            and get some breathing room in that crowded /24 your escaping. A lot
+            of the same principles apply when dealing with IPv6 addressing as
+            well, although there are some significant differences
+          </div>
+
+          <p>N11 Which command enables HSRP on a Cisco IOS device?</p>
+          <div>
+            <b> standby 1 ip 10.1.1.1 </b>
+          </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="mb-4">
+          <div>
+            Say you have a network with IP addresses ranging from 192.168.255.0
+            to 192.168. 255.255 and want to create two subnets. In general, each
+            IP address consists of two parts: network identifier and host
+            identifier. All the host addresses in the same network will have an
+            identical network identifier but a unique host identifier. In this
+            case, the first 24 bits (i.e., 192.168.255) represent the network
+            identifier, and the remaining 8 bits represent the host identifier.
+          </div>
+
+          <p>
+            N12 What is the global command to enable LLDP on a Cisco Catalyst
+            switch?
+          </p>
+          <div>
+            <b> LLDP run </b>
+          </div>
+        </article>
+
+        <!-- 13 -->
+        <article class="mb-4">
+          <div>
+            Considering x is the number of 1 bits needed in the host identifier
+            part of the subnet mask, 2x is the number of subnets. As you need 2
+            subnets, x is 1. 192.168.255.0 is also the common network identifier
+            for the whole network, and its subnet mask is 255.255.255.0 Let's
+            convert these two addresses into binary: 192.168.255.0 =
+            11000000.10101000.11111111.00000000 255.255.255.0 =
+            11111111.11111111.11111111.00000000
+          </div>
+
+          <p>N13 What is the role of the switch in a AAA architecture?</p>
+          <div>
+            <b> Authenticator </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://www.prosec-networks.com/wp-content/uploads/PSN_KB_subnetting_2-1024x657.webp"
+          alt=""
+        />
+
+        <!-- 14 -->
+        <article class="mb-4">
+          <div>
+            As a result, once a network is made, usually it doesnt get recreated
+            or changed drastically. But theres no other choice with our network,
+            and because I am a glutton for punishment, I decided to take on this
+            task myself and not go the consultant route. To do that, I had to
+            blow the dust off the subnetting knowledge that I havent had to use
+            in some time and reacquaint myself with the calculation of hosts.
+            Here are the basics of subnetting as I understand them plus a few
+            things to consider sprinkled in at the end.
+          </div>
+
+          <p>
+            N14 By default, which MAC address will be sent to the next client
+            that is asking for the GLBP virtual gateway?
+          </p>
+          <div>
+            <b> Next virtual MAC in sequence </b>
+          </div>
+        </article>
+
+        <h2>What is IPv6 subnetting?</h2>
+        <!-- 15 -->
+        <article class="mb-4">
+          <div>
+            As you need 2 subnets, one 1 bit is required in the host identifier
+            part of the subnet mask. Hence, the subnet mask required is:
+            11111111.11111111.11111111.10000000 = 255.255.255.128 Accordingly,
+            the subnet ID of the first subnet is 192.168.255.0, and the
+            broadcast address is 192.168.255.127. Similarly, the subnet ID of
+            the second subnet is 192.168.255.128, and the broadcast address is
+            192.168.255.255. Except for the subnet ID and broadcast address, you
+            can use all the remaining IP addresses in a subnet as host
+            addresses.
+          </div>
+
+          <p>
+            N15 The users in a department are using a variety of host platforms,
+            some old and some new. All of them have been approved with a user ID
+            in a RADIUS server database. Which one of these features should be
+            used to restrict access to the switch ports in the building?
+          </p>
+          <div>
+            <b> 802.1X </b>
+          </div>
+        </article>
+
+        <!-- 16 -->
+        <article class="mb-4">
+          <div>
+            A point-to-point subnet is a particular type of subnet used in
+            point-to-point links that facilitate direct communication between
+            two routers. This subnet consists of a 31-bit subnet mask, leaving
+            only two possible addresses in the network. Since point-to-point
+            subnets contain only one host, a different broadcast address isnt
+            necessary.
+          </div>
+
+          <p>N16 Which VRRP group uses the MAC address 0000.5e00.01ff?</p>
+          <div>
+            <b> Group 255 </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://www.freecodecamp.org/news/content/images/2021/03/subnetting.png"
+          alt=""
+        />
+
+        <!-- 17 -->
+        <article class="mb-4">
+          <div>
+            When a device broadcasts a packet, it'll reach all the network
+            devices, burdening the network. Without proper context, broadcast
+            packets can also spam devices within the network. This can lead to
+            degraded network performance. By creating subnets, you can limit the
+            scope of intranetwork broadcast messages to a specific subnet. This
+            also enables efficient communication between devices in a subnet and
+            sends a packet for routing outside the subnet if a destination
+            address isn't part of the subnet
+          </div>
+
+          <p>N17 At which layer should port security be implemented?</p>
+          <div>
+            <b> Access layer </b>
+          </div>
+        </article>
+
+        <!-- 18 -->
+        <article class="mb-4">
+          <div>
+            A subnet is just a range of IP addresses. All the devices in the
+            same subnet can communicate directly with one another without going
+            through any routers. In IPv4, a network interface is connected to
+            only one subnet and has only one IP address. In IPv6 things are
+            slightly more complicated, so we'll save IPv6 subnetting for another
+            article. But its useful to understand IPv4 first because the basic
+            concepts are the same.
+          </div>
+
+          <p>N18 What types of frames do CDP and LLDP use?</p>
+          <div>
+            <b> Layer 2 multicast </b>
+          </div>
+        </article>
+
+        <!-- 19 -->
+        <article class="mb-4">
+          <div>
+            My laptop is on a subnet that also includes a server, a printer, a
+            couple of other workstations, and a router. If I want to communicate
+            with another device in my subnet, I can send packets to it directly.
+            If its not on my subnet, I need to forward the packet to a router
+            first. That router also needs to be on my subnet. My computer knows
+            that another device is in
+          </div>
+
+          <p>
+            N19 What is the expected failover time for SSO mode for Layer 2
+            switching on the Catalyst 4500 family of switches?
+          </p>
+          <div>
+            <b> Subsecond </b>
+          </div>
+        </article>
+
+        <!-- 20 -->
+        <article class="mb-4">
+          <div>
+            Suppose my IP address is 192.168.101.15 and my subnet mask is
+            255.255.255.0. There are 32 bits in the IP address and the same
+            number in the mask. We always write those 32 bits as four 8-bit
+            numbers, often called octets. The thing that can make it confusing
+            is that we use decimal notation for each of those 8-bit numbers, but
+            the mechanics of subnetting are really going on in binary.
+          </div>
+
+          <p>N20 With DHCP snooping, which port is configured as trusted?</p>
+          <div>
+            <b> The port to the DHCP server is always trusted. </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://miro.medium.com/v2/resize:fit:978/1*1ft4vjR6gEdbrOVwzmlGeA.png"
+          alt=""
+        />
+
+        <!-- 21 -->
+        <article class="mb-4">
+          <div>
+            Anywhere the mask has a 1 is the network portion of the address.
+            Anywhere the mask has a 0 is the host portion of the address. The
+            network portion is 192.168.101.0 and the host portion is
+            xx.xx.xx.15. (To make it a little simpler, we always group all the
+            ones to the left and all the zeroes to the right of the mask.)
+          </div>
+
+          <p>
+            N21 What level accuracy is generally achieved with PTP in LAN
+            environment?
+          </p>
+          <div>
+            <b> Microseconds </b>
+          </div>
+        </article>
+
+        <h2>Benefits of subnetting</h2>
+        <!-- 22 -->
+        <article class="mb-4">
+          <div>
+            The lowest value in this subnet range is 0000 0000, which is the
+            decimal number 0. The highest is 1111 1111, which is the decimal
+            number 255. These are what I mean when I say “all 0” and “all 1”.
+            These two values are reserved for the network address (to refer to
+            the entire network) and for local broadcasts on the subnet,
+            respectively. You cant assign them to any host — though there are
+            exceptions to this rule, which Ill talk about in a moment.
+          </div>
+
+          <p>
+            N22 True or False? UDLD in normal mode will detect and shut down a
+            unidirectional link in about 60 seconds. UDLD aggressive mode will
+            detect the link in a shorter time and attempt to reestablish the
+            link every 8 seconds.
+          </p>
+          <div>
+            <b> False </b>
+          </div>
+        </article>
+
+        <!-- 23 -->
+        <article class="mb-4">
+          <div>
+            While many of us are familiar with the special private IP address
+            ranges such as 10.0.0.0/8 and 192.168.0.0/16, there are quite a few
+            other special IP addresses that you can read up on as well that are
+            used for a variety of purposes.
+          </div>
+
+          <p>
+            N23 Which of the following statements best describes SDM templates?
+          </p>
+          <div>
+            <b>
+              SDM templates are pre-defined templates used to configure scarce
+              hardware resources of a Catalyst switch for optimal use in
+              specific environments.
+            </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://www.dnsstuff.com/wp-content/uploads/2020/02/subnetting-advantages-1024x536.png"
+          alt=""
+        />
+
+        <!-- 24 -->
+        <article class="mb-4">
+          <div>
+            /24 is a very common subnet size. Its easy to understand because the
+            network portion of the address is the first three octets and the
+            host portion is the last octet. You can just read off the subnet
+            information. Any two addresses with the same first three octets are
+            in the same subnet.
+          </div>
+
+          <p>
+            N24 Which of the following routing protocols is not supported as
+            part of NSF?
+          </p>
+          <div>
+            <b> RIP </b>
+          </div>
+        </article>
+
+        <h2>Limitations of subnetting</h2>
+        <!-- 25 -->
+        <article class="mb-4">
+          <div>
+            But there are some good reasons for using other sizes of subnets.
+            For example, you might want to conserve addresses on a subnet that
+            you know will never have many devices. Or you might need to create a
+            subnet with many hundreds of devices on it. In both cases, youll
+            want a different subnet size.
+          </div>
+
+          <p>
+            N25 What responder device from the following list provides the most
+            accuracy for IP SLA?
+          </p>
+          <div>
+            <b> Cisco IOS Software with IP SLA responder </b>
+          </div>
+        </article>
+
+        <!-- 26 -->
+        <article class="mb-4">
+          <div>
+            If you have a subnet with a mask of /25, then instead of eight free
+            bits for the host portion of the address, you have only seven bits
+            (32-25=7). 2^7 is 128. Just like in the /24 case, you cant use
+            either the all 0 or all 1 host addresses. That leaves 126 possible
+            host addresses.
+          </div>
+
+          <p>N26 Which of the following statements are true about LLDP?</p>
+          <div>
+            <b> It runs at the data link layer. </b>
+          </div>
+        </article>
+
+        <!-- 27 -->
+        <article class="mb-4">
+          <div>
+            The /32 subnet is used for things like internal loopback addresses
+            where there is only ever one device in a subnet. Loopback interfaces
+            are often used by network devices like routers to provide an
+            interface that is always up.
+          </div>
+
+          <p>
+            N27 Which feature that is supported on Cisco switches restricts a
+            switch port to a specific set or number of MAC addresses?
+          </p>
+          <div>
+            <b> Port security </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://avinetworks.com/wp-content/uploads/2020/09/Subnet-mask-diagram.png"
+          alt=""
+        />
+
+        <!-- 28 -->
+        <article class="mb-4">
+          <div>
+            Take a look at the last two entries, which break the rules for all 0
+            and all 1 host addresses being illegal. It was once true that the
+            only way to get a point-to-point subnet with two devices was to use
+            a /30 subnet. But the trouble with the /30 subnet is that it wastes
+            fully half the range because every /30 subnet has four host
+            addresses, of which two are all 0 and all 1 addresses, which are
+            needed as the network address and the broadcast address.
+          </div>
+
+          <p>
+            N28 Which of the following is not a technology used to join Cisco
+            switches in a stack?
+          </p>
+          <div>
+            <b> StackPower </b>
+          </div>
+        </article>
+
+        <!-- 29 -->
+        <article class="mb-4">
+          <div>
+            In our example, the mask is 255.255.255.0. Thats three groups of
+            eight 1s followed by eight 0s. So we can say everything there is to
+            know about this mask by simply specifying that there are 24 1s
+            (3x8=24), and we write this as /24. In CIDR notation, our example
+            address and subnet information can therefore be written as
+            192.168.101.15/24.
+          </div>
+
+          <p>N29 LLDP is defined as which of the following standards?</p>
+          <div>
+            <b> 802.1ab </b>
+          </div>
+        </article>
+
+        <!-- 30 -->
+        <article class="mb-4">
+          <div>
+            The first trick is that the all-0 address is a binary number that
+            necessarily ends in a zero, which means its always an even number.
+            So, except for /31 and /32 subnets, the first usable address in any
+            range is always an odd number. Similarly, the all-1 address is
+            always an odd number. So the last usable address must be even.
+          </div>
+
+          <p>N30 What is the primary difference between VRRP and HSRP?</p>
+          <div>
+            <b>
+              VRRP is a standard protocol, whereas HSRP is Cisco proprietary.
+            </b>
+          </div>
+        </article>
+
+        <!-- 31 -->
+        <article class="mb-4">
+          <div>
+            Heres what I mean. If Im using a /28 subnet, then I first subtract
+            28 from 32, which is 4. I remember that 2^4 is 16. That tells me to
+            count by 16s. The first subnet is xx.xx.xx.0/28. To get the second
+            subnet, I add 16: xx.xx.xx.16/28, then xx.xx.xx.32/28 and
+            xx.xx.xx.48/28, and so forth.
+          </div>
+
+          <p>
+            N31 What is the aim of the “sticky” option when used with port
+            security?
+          </p>
+          <div>
+            <b>
+              A dynamically learned MAC address is considered like a statically
+              learned MAC address.
+            </b>
+          </div>
+        </article>
+
+        <img
+          class="mb-3 w-75"
+          src="https://i.stack.imgur.com/TSnU8.png"
+          alt=""
+        />
+
+        <!-- 32 -->
+        <article class="mb-4">
+          <div>
+            Think about /23. There are 32 bits in the address so if the mask is
+            23 bits long, then there are 9 bits available for hosts. This means
+            all the bits of the fourth octet in the IP address and one bit of
+            the third. In netmask notation, this would be 255.255.254.0. Lets
+            look at an example.
+          </div>
+
+          <p>
+            N32 What concept does NTP use to keep accuracy of time when
+            synchronizing time in a network?
+          </p>
+          <div>
+            <b> Stratum </b>
+          </div>
+        </article>
+
+        <!-- 33 -->
+        <article class="mb-4">
+          <div>
+            Every address between 10.11.12.1 and 10.11.13.254 is included in
+            this subnet. This includes 10.11.12.255 and 10.11.13.0, but a lot of
+            network administrators avoid these addresses for mostly
+            superstitious reasons, even though they are valid addresses. (Its
+            not completely superstitious. If you use these addresses and one or
+            more hosts on the network are misconfigured to use the more common
+            /24 subnet mask, then you could wind up seeing some traffic for
+            these two hosts sent as broadcasts rather than direct unicast
+            packets.)
+          </div>
+
+          <p>
+            N33 Which IP address should a client PC use as its default gateway
+            if you have the following configuration on a multilayer switch?
+            interface ethernet 0/1 no switchport ip address 192.168.199.3
+            255.255.255.0 vrrp 1 ip address 192.168.199.2
+          </p>
+          <div>
+            <b> 192.168.199.2 </b>
+          </div>
+        </article>
+
+        <!-- 34 -->
+        <article class="mb-4">
+          <div>
+            We can make subnets with even larger ranges, like /22, or /11. But
+            the good news is that you dont need to memorize a bunch of powers of
+            2 for these. Instead, just apply the rules that we discussed above
+            for /24-/32, but on a different octet of the address.
+          </div>
+
+          <p>N34 What is the purpose of DHCP option 82?</p>
+          <div>
+            <b>
+              DHCP provides additional information in the DHCP request to inform
+              the DHCP server of additional specifics about the locality and
+              details about the DHCP request.
+            </b>
+          </div>
+        </article>
+
+        <!-- 35 -->
+        <article class="mb-4">
+          <div>
+            By this I mean that /16 is just like /24 but on the third octet.
+            Similarly, /17 is like /25, and so forth. For example, if my subnet
+            was 10.12.0.0/20, I could think about the analysis that we just did
+            for /28 (because 20 bits is 4 more than 16, just as 28 is 4 more
+            than 24).
+          </div>
+
+          <p>
+            N35 Which statement describes the err-disabled state on a switch?
+          </p>
+          <div>
+            <b>
+              The err-disabled state of a port describes a condition when the
+              switch has disabled the port due to an error condition to prevent
+              any further issues on the network.
+            </b>
+          </div>
+        </article>
+      </main>
+
+        <div>
+            <div class="d-flex flex-column w-50 ms-5 sticky-top">
+                <img class="w-100 mb-5" src="https://i.ytimg.com/vi/BWZ-MHIhqjM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBgAT-BqxFq3dy2R8MJEwO4xhIl_A" alt="">
+                <img class="w-100 mb-5" src="https://deborahhindi.com/images/974573.jpg" alt="">
+                <img class="w-100" src="https://routerctrl.com/wp-content/uploads/2022/07/What-is-a-Subnet-1024x576.jpg?ezimgfmt=ngcb1/notWebP" alt="">
+                
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
